@@ -19,13 +19,11 @@ scan_sub_dir="spa-car spa-eur spa-lac por-brz"
 
 # output folder for audio lists, fbanks, attribute scores ...
 out_dir=/home1/ivan/projects_data/mulan_extractor
-out_sub_dir=$scan_sub_dir
 
 # 0. prepare data
 # scan Spanish cluster subfolders of LID dataset
 if [ $stage -eq 0 ]; then
-  for sub in $scan_sub_dir; do    
-    # steps/data_prep_by_list.sh ${scan_sub_dir[i]} $dataset_dir $out_dir/${out_sub_dir[i]}
+  for sub in $scan_sub_dir; do        
     steps/data_prep.sh $dataset_dir/$sub "pcm" $out_dir/$sub
   done
 fi
