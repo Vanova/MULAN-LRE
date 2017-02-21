@@ -2,6 +2,8 @@
 # set -x;
 # trap read debug;
 
+### run: ./run_cnn.sh 1 # with number of stage
+
 stage=$1
 
 . ./path.sh
@@ -38,8 +40,6 @@ if [ $stage -eq 1 ]; then
   done  
 fi
 
-
-# NOTE: compile last KALDI src with MFoM UvZ loss
 # 2. forward data through the Neural Network and producing scores
 if [ $stage -eq 2 ]; then
   # NOTE: you can fix number of threads for calculate jobs at a time

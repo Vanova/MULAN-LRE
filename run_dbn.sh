@@ -43,14 +43,14 @@ fi
 if [ $stage -eq 2 ]; then
   # NOTE: you can fix number of threads for calculate jobs at a time
   echo "LID dataset"
-  # echo "*** Manner extraction ***"
-  # for sub in $scan_sub_dir; do
-  #   fbank_dir=$out_dir/$sub/dbn-fbank
-  #   trans=model/manner/fbank_to_splice_dbn.trans
-  #   nnet=model/manner/rbm_dbn_2_1024.nnet
-  #   manner_out=$out_dir/$sub/res/dbn/manner
-  #   steps/forward_dbn_parallel.sh $nj $fbank_dir $trans $nnet $manner_out
-  # done
+  echo "*** Manner extraction ***"
+  for sub in $scan_sub_dir; do
+    fbank_dir=$out_dir/$sub/dbn-fbank
+    trans=model/manner/fbank_to_splice_dbn.trans
+    nnet=model/manner/rbm_dbn_2_1024.nnet
+    manner_out=$out_dir/$sub/res/dbn/manner
+    steps/forward_dbn_parallel.sh $nj $fbank_dir $trans $nnet $manner_out
+  done
 
   echo "*** Place extraction ***"
   for sub in $scan_sub_dir; do
