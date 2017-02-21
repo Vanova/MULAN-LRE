@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# set -x;
+# trap read debug
+
 # Begin config
 fbank_config=conf/fbank_cnn.conf
 pitch_config=conf/pitch_cnn.conf
@@ -44,7 +47,7 @@ pitch_feats="ark,s,cs:compute-kaldi-pitch-feats --verbose=2 --config=$pitch_conf
 run.pl JOB=1:$nj $logdir/make_fbank_pitch.JOB.log \
     paste-feats --length-tolerance=$paste_length_tolerance "$fbank_feats" "$pitch_feats" ark:- \| \
     copy-feats --compress=$compress ark:- \
-      ark,scp,t:$fbankdir/fbank_pitch.JOB.ark,$fbankdir/fbank_pitch.JOB.scp \
+      ark,scp:$fbankdir/fbank_pitch.JOB.ark,$fbankdir/fbank_pitch.JOB.scp \
       || exit 1;
 
 if [ -f $logdir/.error ]; then
