@@ -7,9 +7,9 @@ These articulatory attribute features (manner and place) are high-level speech d
 2. be sure that all your bash files are runnable, fixing: run from the project folder `chmod -R +x ./`
 3. fix paths `dataset_dir`, `scan_sub_dir` and  `out_dir` in the scripts `run_cnn.sh` and `run_dbn.sh`
 
-> `dataset_dir`: path to the LRE-15 dataset
-> `scan_sub_dir`: subforlders to search wave files with the `pcm` extention
-> `out_dir`: audio lists, fbank features and result attribute scores will be saved there
+- `dataset_dir`: path to the LRE-15 dataset
+- `scan_sub_dir`: subforlders to search wave files with the `pcm` extention
+- `out_dir`: output path, where audio lists, fbank features and result attribute scores will be saved there
 
 After that, you can run 
 ```sh
