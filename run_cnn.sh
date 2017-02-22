@@ -10,7 +10,7 @@ stage=$1
 
 nj=20 # number of parallel jobs
 ###
-# LID dataset feature extraction
+# LRE15 dataset feature extraction
 ###
 # root folder with audio files to scan
 dataset_dir=/data3/pums/LRE2015/LDC2015E87E88_LRE15_Training_Data
@@ -41,7 +41,7 @@ fi
 # 2. forward data through the Neural Network and producing scores
 if [ $stage -eq 2 ]; then
   # NOTE: you can fix number of threads for calculate jobs at a time
-  echo "LID dataset"
+  echo "LRE dataset"
   echo "*** Manner extraction ***"
   for sub in $scan_sub_dir; do
     fbank_dir=$out_dir/$sub/cnn-fbank
