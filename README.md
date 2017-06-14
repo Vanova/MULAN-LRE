@@ -2,6 +2,22 @@
 This version of MULAN repository for extracting attribute features from raw audio files from LRE15 dataset.
 These articulatory attribute features (manner and place) are high-level speech descriptive features. More information you can find in articles [TODO refs]
 
+###Citation
+```bibteh
+@inproceedings{DBLP:conf/slt/KukanovHSL16,
+  author    = {Ivan Kukanov and Ville Hautam{\"{a}}ki and
+               Sabato Marco Siniscalchi and Kehuang Li},
+  title     = {Deep learning with maximal figure-of-merit cost to advance multi-label
+               speech attribute detection},
+  booktitle = {2016 {IEEE} Spoken Language Technology Workshop, {SLT} 2016, San Diego,
+               CA, USA, December 13-16, 2016},
+  pages     = {489--495},
+  year      = {2016},
+  doi       = {10.1109/SLT.2016.7846308}
+}
+
+```
+
 ###How to run?
 1. fix path variable `KALDI_ROOT` in `path.sh` pointing to your installed Kaldi toolkit
 2. be sure that all your bash files are runnable, fixing: run from the project folder `chmod -R +x ./`
