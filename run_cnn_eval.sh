@@ -16,18 +16,18 @@ stage=$1
 nj=20 # number of parallel jobs
 
 # root folder with audio files to scan
-dataset_dir=/data3/pums/LRE2015/lre15-N-01/data/
+dataset_dir=/data3/pums/LRE2015/lre15-N-01/
 # subfolders to scan
-scan_sub_dir="" # scan dataset_dir itself
+scan_sub_dir="data/"
 
 # output folder for audio lists, fbanks, attribute scores ...
 out_dir=/home1/ivan/projects_data/mulan_extractor
 
 # 0. prepare data
-# scan Spanish cluster subfolders of LID dataset
+# scan subfolders of LRE dataset
 if [ $stage -eq 0 ]; then
   for sub in $scan_sub_dir; do        
-    steps/data_prep.sh $dataset_dir/$sub "pcm" $out_dir/$sub
+    steps/data_prep.sh $dataset_dir/$sub "sph" $out_dir/$sub
   done
 fi
 
