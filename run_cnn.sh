@@ -13,12 +13,15 @@ nj=20 # number of parallel jobs
 # LRE15 dataset feature extraction
 ###
 # root folder with audio files to scan
-dataset_dir=/data3/pums/LRE2015/LDC2015E87E88_LRE15_Training_Data
+#dataset_dir=/data3/pums/LRE2015/LDC2015E87E88_LRE15_Training_Data
+dataset_dir=/data3/pums/trungnt/LRE2017
+
 # subfolders to scan
-scan_sub_dir="spa-car spa-eur spa-lac por-brz"
+#scan_sub_dir="spa-car spa-eur spa-lac por-brz"
+scan_sub_dir=""
 
 # output folder for audio lists, fbanks, attribute scores ...
-out_dir=/home1/ivan/projects_data/mulan_extractor
+out_dir=/home1/ivan/projects_data/mulan_lre17/
 
 # 0. prepare data
 # scan Spanish cluster subfolders of LID dataset
