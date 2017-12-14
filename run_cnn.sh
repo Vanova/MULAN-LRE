@@ -1,6 +1,6 @@
 #!/bin/bash 
-# set -x;
-# trap read debug;
+#set -x;
+#trap read debug;
 
 ### run: ./run_cnn.sh 1 # with number of stage
 
@@ -14,11 +14,12 @@ nj=20 # number of parallel jobs
 ###
 # root folder with audio files to scan
 #dataset_dir=/data3/pums/LRE2015/LDC2015E87E88_LRE15_Training_Data
-dataset_dir=/data3/pums/trungnt/LRE2017
+dataset_dir=/data3/pums/trungnt/LRE2017/LDC2017E22/data/
 
 # subfolders to scan
 #scan_sub_dir="spa-car spa-eur spa-lac por-brz"
-scan_sub_dir=""
+scan_sub_dir="ara-acm  ara-ary  eng-gbr  por-brz  qsl-rus  spa-eur  zho-cmn"
+scan_sub_dir+=" ara-apc  ara-arz  eng-usg  qsl-pol  spa-car  spa-lac  zho-nan"
 
 # output folder for audio lists, fbanks, attribute scores ...
 out_dir=/home1/ivan/projects_data/mulan_lre17/
@@ -27,7 +28,7 @@ out_dir=/home1/ivan/projects_data/mulan_lre17/
 # scan Spanish cluster subfolders of LID dataset
 if [ $stage -eq 0 ]; then
   for sub in $scan_sub_dir; do        
-    steps/data_prep.sh $dataset_dir/$sub "pcm" $out_dir/$sub
+    steps/data_prep.sh $dataset_dir/$sub "sph" $out_dir/$sub
   done
 fi
 

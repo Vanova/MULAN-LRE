@@ -36,8 +36,8 @@ while read line; do
   # parse file name only (without path and ext): utterance_id
   name=$(basename $full_name)  
   utterance_id=${name%.*}
-  echo $utterance_id "sox -r 8000 -t raw -e signed-integer -b 16 -c 1 " $full_name " -t wav - |"
-  # echo $utterance_id "sox $full_name -r 8000 -c 1 -t wav -b 16 - |"
+  #echo $utterance_id "sox -r 8000 -t raw -e signed-integer -b 16 -c 1 " $full_name " -t wav - |"
+  echo $utterance_id "sox $full_name -r 8000 -c 1 -t wav -b 16 - |"
 done < $wavlist > $scp;
 
 cat $scp | sort -u -k1,1 -o $scp
